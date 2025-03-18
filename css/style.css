@@ -75,26 +75,60 @@ main {
     background-color: #e6b800;
 }
 
-@media (max-width: 600px) {
-    .navbar {
-        font-size: 20px;
-    }
-    .container {
-        padding: 20px;
-    }
-    .title {
-        font-size: 28px;
-    }
-    .description {
-        font-size: 16px;
-    }
-    .btn {
-        font-size: 18px;
-    }
+#globo {
+    margin-left: auto; /* #globo para a direita */
+    background-color: none;
+    
 }
 
-@media (max-width: 1024px) and (min-width: 601px) {
+img {
+    max-width: 50%;
+    height: 50%;
+    display: block;
+    margin: 0 30%;
+}
+
+
+
+@media (max-width: 1024px) and (min-width: 856px) {
+    .navbar a {
+        font-size: 28px;
+    }
+    
     .container {
         max-width: 80%;
     }
+/* 
+    img {
+        max-width: 25%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+    } */
 }
+
+@media (max-width: 855px) and (min-width: 601px) {
+    .navbar a {
+        font-size: 28px;
+    }
+    
+    .container {
+        max-width: 80%;
+    }
+
+    img {
+        display: none;
+    }
+}
+
+    
+    @media (max-width: 600px) {
+        img {
+            display: none;
+        }
+
+        #globo {
+            display: none;
+        }
+    }
