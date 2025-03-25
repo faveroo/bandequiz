@@ -10,11 +10,22 @@ body {
     background-color: #0a1f5a;
 }
 
+.img img {
+    max-width: 50px;
+}
+
+.img {
+    
+    margin-left: auto;
+}
+
+
 .navbar {
     background-color: #000000;
-    padding: 20px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     font-size: 24px;
     font-weight: bold;
 }
@@ -75,19 +86,6 @@ main {
     background-color: #e6b800;
 }
 
-#globo {
-    margin-left: auto; /* #globo para a direita */
-    background-color: none;
-    
-}
-
-img {
-    max-width: 50%;
-    height: 50%;
-    display: block;
-    margin: 0 30%;
-}
-
 
 
 @media (max-width: 1024px) and (min-width: 856px) {
@@ -96,19 +94,12 @@ img {
     }
     
     .container {
-        max-width: 80%;
+        max-width: 90%;
     }
-/* 
-    img {
-        max-width: 25%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        padding: 10px;
-    } */
+
 }
 
-@media (max-width: 855px) and (min-width: 601px) {
+@media (max-width: 855px) and (min-width: 356px) {
     .navbar a {
         font-size: 28px;
     }
@@ -116,19 +107,27 @@ img {
     .container {
         max-width: 80%;
     }
-
-    img {
-        display: none;
-    }
 }
 
     
-    @media (max-width: 600px) {
-        img {
-            display: none;
-        }
-
-        #globo {
-            display: none;
-        }
+@media (max-width: 355px){
+    .navbar a {
+        font-size: 26px;
     }
+
+    .img img {
+        display: none
+    }
+
+    .container {
+        max-width: 80%;
+    }
+    .container h2 {
+        font-size: 18px;
+    }
+
+    .container p, a {
+        font-size: 16px;
+    }
+
+}

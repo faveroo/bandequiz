@@ -9,7 +9,13 @@
 <body>
     <nav class="navbar">
         <a href="index.html" id="logo">Bandequiz</a>
-        <a href="https://www.google.com.br/maps/" id="globo">🌍</a>
+
+        <picture class="img"> <!--  Tive que usar o picture para conseguir fazer o responsivo -->
+            <source srcset="./assets/smartphone.png" media="(max-width: 480px)">
+            <source srcset="./assets/ipad.png" media="(max-width: 768px)">
+            <source srcset="./assets/desktop.png" media="(max-width: 1500px)">
+            <img src="./assets/desktop.png" alt="Quiz">
+          </picture>
     </nav>
 
         <main>
@@ -18,12 +24,9 @@
                 <p class="description">Teste seus conhecimentos sobre as bandeiras dos países do mundo!</p>
                 <a href="quiz.html" class="btn">Iniciar</a>
             </div>
+              
+       
 
-            <picture class="img"> <!--  Tive que usar o picture para conseguir fazer o responsivo -->
-                <source srcset="./assets/quiz.png" media="(max-width: 800px)">
-                <source srcset="./assets/ideas.png" media="(max-width: 1200px)">
-                <img src="./assets/quiz.png" alt="Quiz">
-              </picture>
 
         </main>
 </body>
