@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .game {
@@ -71,4 +71,17 @@ img {
 #submit:hover {
     background-color: #e6b800;
     transform: scale(1.05);
+}
+
+#feedback {
+    top: 10%;
+    position: fixed;
+    background-color: green;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px;
+    display: none;
+    width: 50%;
+    text-align: center;
 }
