@@ -1,4 +1,5 @@
-
+// Só vai funcionar em servidor local ou na extensão live Server do VSCODE, por conta da política CORS, vou manter assim por conta
+// do array de bandeiras ser muito extenso
 
 import { bandeiras } from "./bandeiras.js";
 
