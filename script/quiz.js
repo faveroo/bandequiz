@@ -1,5 +1,4 @@
-// Só vai funcionar em servidor local ou na extensão live Server do VSCODE, por conta da política CORS, vou manter assim por conta
-// do array de bandeiras ser muito extenso
+
 
 import { bandeiras } from "./bandeiras.js";
 
@@ -16,7 +15,7 @@ function carregarBandeira() {
    answer.value = "";
    feedback.style.display = "none"; // Esconde o feedback
    feedback.textContent = "";
-   // answer.focus();
+   answer.focus();
 
    flagAtual = bandeiras[Math.floor(Math.random() * bandeiras.length)]; // math.random retorna entre 0 e 1, multiplico pelo tamanho do array para percorrer por inteiro, depois arredondo para baixo com math.floor para deixar um numero inteiro
    bandeira.src = flagAtual.imagem;
