@@ -8,6 +8,7 @@ const bandeira = document.getElementById("flagImage");
 const answer = document.getElementById("answer");
 const submit = document.getElementById("submit");
 const feedback = document.getElementById("feedback");
+const streak = document.getElementById("streak");
 
 let flagAtual = {};
 
@@ -15,7 +16,7 @@ function carregarBandeira() {
    answer.value = "";
    feedback.style.display = "none"; // Esconde o feedback
    feedback.textContent = "";
-   answer.focus();
+   // answer.focus();
 
    flagAtual = bandeiras[Math.floor(Math.random() * bandeiras.length)]; // math.random retorna entre 0 e 1, multiplico pelo tamanho do array para percorrer por inteiro, depois arredondo para baixo com math.floor para deixar um numero inteiro
    bandeira.src = flagAtual.imagem;
@@ -27,11 +28,13 @@ function verificarResposta() {
       feedback.style.backgroundColor = "green"; 
       feedback.style.color = "white"
       feedback.textContent = "Correto!";
+      streak.textContent = parseInt(streak.textContent) + 1;
    } else {
       feedback.style.display = "block"; 
       feedback.style.backgroundColor = "red"; 
       feedback.style.color = "white";
       feedback.textContent = `Incorreto! A bandeira é do ${flagAtual.pais}`;
+      streak.textContent = 0;
 
    }
 }
