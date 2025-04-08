@@ -1,7 +1,7 @@
-const bandeiras = [
-   {pais: "Brasil", imagem: "./assets/svg/br.svg"},
-   {pais: "Bahamas", imagem: "./assets/svg/bs.svg"},
-];
+
+
+import { bandeiras } from "./bandeiras.js";
+
 
 const bandeira = document.getElementById("flagImage");
 const answer = document.getElementById("answer");
@@ -27,7 +27,7 @@ function verificarResposta() {
       feedback.style.color = "white"
       feedback.textContent = "Correto!";
    } else {
-      feedback.style.display = "block"; // Mostra o feedback
+      feedback.style.display = "block"; 
       feedback.style.backgroundColor = "red"; 
       feedback.style.color = "white";
       feedback.textContent = `Incorreto! A bandeira é do ${flagAtual.pais}`;
@@ -37,9 +37,16 @@ function verificarResposta() {
 
 submit.addEventListener("click", function() {
    verificarResposta();
-   setTimeout(carregarBandeira, 2000); // 2 segundos para carregar a próxima bandeira
+   setTimeout(carregarBandeira, 2000); // 2 segundos para carregar
 
 })
+
+answer.addEventListener("keydown", function(event) {
+   if(event.key === "Enter") {
+      verificarResposta();
+      setTimeout(carregarBandeira, 2000); 
+   }
+});
 
 console.log(Math.random())
 document.addEventListener("DOMContentLoaded", carregarBandeira);
