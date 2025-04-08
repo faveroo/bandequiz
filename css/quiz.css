@@ -20,7 +20,7 @@ body {
 
 .game {
     text-align: center;
-    width: 600px;
+    width: 60%;
     padding: 30px;
     background-color: rgba(31, 65, 129, 0.87);
     border-radius: 15px;
@@ -29,7 +29,7 @@ body {
 
 
 #flagImage {
-    max-width: 500px;
+    width: 60%;
 }
 
 img {
