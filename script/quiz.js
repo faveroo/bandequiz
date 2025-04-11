@@ -15,14 +15,18 @@ function carregarBandeira() {
    answer.value = "";
    feedback.style.display = "none"; // Esconde o feedback
    feedback.textContent = "";
+   answer.disabled = false;
    answer.focus();
 
-   flagAtual = bandeiras[Math.floor(Math.random() * bandeiras.length)]; // math.random retorna entre 0 e 1, multiplico pelo tamanho do array para percorrer por inteiro, depois arredondo para baixo com math.floor para deixar um numero inteiro
+   flagAtual = bandeiras[Math.floor(Math.random() * bandeiras.length)]; // math.random retorna entre 0 e 1, multiplico pelo tamanho do array para percorrer por inteiro, depois arredondo para baixo com math.floor para deixar um numero inteiro 
    bandeira.src = flagAtual.imagem;
 }
 
 function verificarResposta() {
-   if(answer.value.toLowerCase() === flagAtual.pais.toLowerCase()) {
+
+   
+
+   if(answer.value.trim().toLowerCase() === flagAtual.pais.toLowerCase()) {
       feedback.style.display = "block"; // Mostra o feedback
       feedback.style.backgroundColor = "green"; 
       feedback.style.color = "white"
@@ -32,7 +36,7 @@ function verificarResposta() {
       feedback.style.display = "block"; 
       feedback.style.backgroundColor = "red"; 
       feedback.style.color = "white";
-      feedback.textContent = `Incorreto! A bandeira é do ${flagAtual.pais}`;
+      feedback.textContent = `Incorreto! A resposta era "${flagAtual.pais}"`;
       streak.textContent = 0;
 
    }
@@ -40,6 +44,7 @@ function verificarResposta() {
 
 submit.addEventListener("click", function() {
    verificarResposta();
+   answer.disabled = true;
    setTimeout(carregarBandeira, 2000); // 2 segundos para carregar
 
 })
@@ -47,7 +52,8 @@ submit.addEventListener("click", function() {
 answer.addEventListener("keydown", function(event) {
    if(event.key === "Enter") {
       verificarResposta();
-      setTimeout(carregarBandeira, 2000); 
+      answer.disabled = true;
+      setTimeout(carregarBandeira, 2000);
    }
 });
 
