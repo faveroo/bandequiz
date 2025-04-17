@@ -7,27 +7,36 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar">
+    <header class="header">
         <a href="index.html" id="logo">Bandequiz</a>
-
-        <picture class="img"> <!--  Tive que usar o picture para conseguir fazer o responsivo -->
-            <source srcset="./assets/smartphone.png" media="(max-width: 480px)">
-            <source srcset="./assets/ipad.png" media="(max-width: 768px)">
-            <source srcset="./assets/desktop.png" media="(max-width: 1500px)">
+            <picture class="img"> <!--  Tive que usar o picture para conseguir fazer o responsivo -->
+                <source srcset="./assets/smartphone.png" media="(max-width: 480px)">
+                <source srcset="./assets/ipad.png" media="(max-width: 768px)">
+                <source srcset="./assets/desktop.png" media="(max-width: 1500px)">
             <img src="./assets/desktop.png" alt="Quiz">
           </picture>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Google Maps</a></li>
+            <li><a href="#">Sobre</a></li>
+        </ul>
     </nav>
 
-        <main>
+        <main class="main">
             <div class="container">
-                <h2 class="title">Bem-vindo ao Bandequiz</h2>
-                <p class="description">Teste seus conhecimentos sobre as bandeiras dos países do mundo!</p>
-                <a href="quiz.html" class="btn">Iniciar</a>
+                <h2 class="title"> Modo Básico</h2>
+                <p class="description">Países e Ilhas</p>
+                <a href="quiz.html" class="btn">Quiz</a>
             </div>
-              
-       
-
-
+            <div class="container">
+                <h2 class="title"> Modo Avançado</h2>
+                <p class="description">Capitais e Estados</p>
+                <a href="quiz2.html" class="btn">Quiz</a>
+            </div>
         </main>
+
+        <footer><p>&copy; 2025 - Todos os direitos reservados</p></footer>
 </body>
 </html>
