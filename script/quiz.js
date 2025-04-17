@@ -1,6 +1,6 @@
 
 
-import { bandeiras } from "./bandeiras.js";
+import { basico } from "./bandeiras.js";
 
 
 const bandeira = document.getElementById("flagImage");
@@ -16,9 +16,9 @@ function carregarBandeira() {
    feedback.style.display = "none"; // Esconde o feedback
    feedback.textContent = "";
    answer.disabled = false;
-   answer.focus();
+   // answer.focus();
 
-   flagAtual = bandeiras[Math.floor(Math.random() * bandeiras.length)]; // math.random retorna entre 0 e 1, multiplico pelo tamanho do array para percorrer por inteiro, depois arredondo para baixo com math.floor para deixar um numero inteiro 
+   flagAtual = basico[Math.floor(Math.random() * basico.length)]; // math.random retorna entre 0 e 1, multiplico pelo tamanho do array para percorrer por inteiro, depois arredondo para baixo com math.floor para deixar um numero inteiro 
    bandeira.src = flagAtual.imagem;
 }
 
