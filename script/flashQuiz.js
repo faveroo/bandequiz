@@ -23,14 +23,49 @@ function carregarBandeira() {
     
 
     bandeira.src = flagAtual.imagem;
-}
 
-function descarregaBandeira() {
-    bandeira.src = " "
+    setTimeout( () => {
+        bandeira.src = " "
     bandeira.alt = " "
     bandeira.style.display = "none"; // Esconde a bandeira
+    }, 150)
 }
 
-document.addEventListener("DOMContentLoaded", carregarBandeira);
 
-setTimeout(descarregaBandeira, 200);
+function verificarResposta() {
+
+   
+
+    if(answer.value.trim().toLowerCase() === flagAtual.pais.toLowerCase()) {
+       feedback.style.display = "block"; // Mostra o feedback
+       feedback.style.backgroundColor = "green"; 
+       feedback.style.color = "white"
+       feedback.textContent = "Correto!";
+       streak.textContent = parseInt(streak.textContent) + 1;
+    } else {
+       feedback.style.display = "block"; 
+       feedback.style.backgroundColor = "red"; 
+       feedback.style.color = "white";
+       feedback.textContent = `Incorreto! A resposta era "${flagAtual.pais}"`;
+       streak.textContent = 0;
+ 
+    }
+ }
+ 
+
+submit.addEventListener("click", function() {
+    verificarResposta();
+    answer.disabled = true;
+    setTimeout(carregarBandeira, 2000);
+ 
+ })
+ 
+ answer.addEventListener("keydown", function(event) {
+    if(event.key === "Enter") {
+       verificarResposta();
+       answer.disabled = true;
+       setTimeout(carregarBandeira, 2000);
+    }
+ });
+
+document.addEventListener("DOMContentLoaded", carregarBandeira);
