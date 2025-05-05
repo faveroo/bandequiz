@@ -8,7 +8,11 @@
 
 body {
     background-color: #0a1f5a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .img img {
     max-width: 50px;
@@ -43,6 +47,7 @@ body {
 }
 
 main {
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -90,9 +95,9 @@ main {
 
 /* NAV E FOOTER */
 
-footer, nav {
+nav {
     padding: 1%;
-    max-width: 100%;
+    min-width: 100%;
     margin: 0 auto;
     background-color: #111111;
     
@@ -132,7 +137,6 @@ footer {
     background-color: #3343a096;
     text-align: center;
     padding: 1%;
-    position: relative;
 }
 
 footer > p {
@@ -151,6 +155,7 @@ footer > p {
     .container {
         max-width: 60%;
     }
+    
 
 }
 
@@ -167,6 +172,9 @@ footer > p {
     .container h2 {
         font-size: 28px;
     }
+
+    
+
 }
 
     
@@ -194,4 +202,9 @@ footer > p {
         font-size: 16px;
     }
 
+    footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+     }
 }
