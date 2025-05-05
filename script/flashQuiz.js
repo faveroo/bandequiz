@@ -15,7 +15,7 @@ function carregarBandeira() {
     feedback.textContent = "";
     bandeira.style.display = "flex";
     answer.disabled = false;
-    // answer.focus();
+    answer.focus();
 
 
     
@@ -56,7 +56,7 @@ function verificarResposta() {
 submit.addEventListener("click", function() {
     verificarResposta();
     answer.disabled = true;
-    setTimeout(carregarBandeira, 2000);
+    setTimeout(carregarBandeira, 500);
  
  })
  
@@ -64,7 +64,7 @@ submit.addEventListener("click", function() {
     if(event.key === "Enter") {
        verificarResposta();
        answer.disabled = true;
-       setTimeout(carregarBandeira, 2000);
+       setTimeout(carregarBandeira, 500);
     }
  });
 
