@@ -20,8 +20,17 @@
     <nav>
         <ul>
             <li><a href="#">Google Maps</a></li>
-            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Fale Conosco</a></li>
         </ul>
+        <form action="" method="post" id="form">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" name="telefone" id="telefone" placeholder="Digite seu telefone" required>
+            <input type="submit" value="Enviar">
+        </form>
     </nav>
 
         <main class="main">
@@ -43,5 +52,15 @@
         </main>
 
         <footer><p>&copy; 2025 - Todos os direitos reservados</p></footer>
+
+        <script>
+            // Para mostrar o formulário ao clicar em "Fale Conosco"
+            const form = document.getElementById('form');
+            const faleConosco = document.querySelector('nav ul li:nth-child(2) a'); // Busca o segundo li dentro da nav e depois o a
+            faleConosco.addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o comportamento padrão de link
+                form.style.display = form.style.display === 'flex' ? 'none' : 'flex';
+            })
+        </script>
 </body>
 </html>
