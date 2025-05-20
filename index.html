@@ -20,7 +20,7 @@
     <nav>
         <ul>
             <li><a href="#">Google Maps</a></li>
-            <li><a href="#">Fale Conosco</a></li>
+            <li><a href="#" id="faleConosco">Fale Conosco</a></li>
         </ul>
         <form action="" method="post" id="form">
             <label for="nome">Nome:</label>
@@ -56,11 +56,19 @@
         <script>
             // Para mostrar o formulário ao clicar em "Fale Conosco"
             const form = document.getElementById('form');
-            const faleConosco = document.querySelector('nav ul li:nth-child(2) a'); // Busca o segundo li dentro da nav e depois o a
+            const faleConosco = document.getElementById('faleConosco')
             faleConosco.addEventListener('click', function(event) {
                 event.preventDefault(); // Impede o comportamento padrão de link
                 form.style.display = form.style.display === 'flex' ? 'none' : 'flex';
             })
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Formulário enviado com sucesso!')
+                form.reset();
+                form.style.display = 'none'; 
+            });
+
         </script>
 </body>
 </html>
