@@ -22,13 +22,13 @@
             <li><a href="#">Google Maps</a></li>
             <li><a href="#" id="faleConosco">Fale Conosco</a></li>
         </ul>
-        <form action="" method="post" id="form">
+        <form action="#" method="post" id="form">
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
             <label for="email">E-mail:</label>
             <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
-            <label for="telefone">Telefone:</label>
-            <input type="tel" name="telefone" id="telefone" placeholder="Digite seu telefone" required>
+            <label for="descricao">Descrição:</label>
+            <textarea name="descricao" id="descricao" placeholder="Digite sua descrição" required></textarea>
             <input type="submit" value="Enviar">
         </form>
     </nav>
@@ -63,10 +63,18 @@
             })
 
             form.addEventListener('submit', function(event) {
+                const nome = document.getElementById('nome').value; 
+                const email = document.getElementById('email').value;
+                const descricao = document.getElementById('descricao').value;
+                const data = '{"Nome": "' + nome + '", "Email": "' + email + '", "Descrição": "' + descricao + '"}';
                 event.preventDefault();
-                alert('Formulário enviado com sucesso!')
+                // alert('Formulário enviado com sucesso!')
                 form.reset();
-                form.style.display = 'none'; 
+                form.style.display = 'none';
+
+                console.log(data);
+
+                
             });
 
         </script>
